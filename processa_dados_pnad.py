@@ -1,22 +1,12 @@
-# -*- coding: utf-8 -*-
-# Merge PNADc 2023 + 2024 (raw rows, no aggregation)
-# Keep: ano, trimestre, id_uf, V1022, V2007, V2009, V2010, V3002, VD4002, V4032, VD4019, V1028
-# Add readable labels for key coded variables
-# Final DataFrame: `data`
-
 import pandas as pd
 from pathlib import Path
 
-# ---------------------------
-# 0) CONFIG
-# ---------------------------
+
 INPUT_FILES = ["2023.csv", "2024.csv"] 
 OUTPUT_FILE = "people_14_25_2023_2024_fullvars.csv"
 AGE_MIN, AGE_MAX = 14, 25             
 
-# ---------------------------
-# 1) CODE MAPPINGS
-# ---------------------------
+
 UF_SIGLA = {
     11:"RO", 12:"AC", 13:"AM", 14:"RR", 15:"PA", 16:"AP", 17:"TO", 21:"MA", 22:"PI", 23:"CE", 24:"RN", 25:"PB", 26:"PE", 27:"AL", 28:"SE", 29:"BA",
     31:"MG", 32:"ES", 33:"RJ", 35:"SP", 41:"PR", 42:"SC", 43:"RS", 50:"MS", 51:"MT", 52:"GO", 53:"DF"
